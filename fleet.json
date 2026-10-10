@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "poker-ocr",
+    "name": "Poker Ocr",
+    "tagline": "Autonomous squad application: Poker Ocr.",
+    "category": "Engineering",
+    "icon": "⚡",
+    "iconBg": "bg-primary/20 text-primary border border-primary/30",
+    "path": "ai-app-poker-ocr",
+    "startCommand": "python main.py",
+    "port": 3000,
+    "url": "http://localhost:3000",
+    "qaUrl": "https://ai-app-poker-ocr-qa.onrender.com",
+    "prodUrl": "https://ai-app-poker-ocr.onrender.com",
+    "cloudUrl": "https://ai-app-poker-ocr.onrender.com",
+    "envMode": "local",
+    "githubUrl": "https://github.com/T-Limbu/ai-app-poker-ocr",
+    "techStack": [
+      "Python"
+    ]
+  }
+]
