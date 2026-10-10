@@ -1,0 +1,160 @@
+[
+  {
+    "id": "oplox",
+    "name": "Oplox Hub",
+    "tagline": "Opus Locus Unified Command Suite & Application Control Plane.",
+    "category": "Engineering",
+    "icon": "🌐",
+    "iconBg": "bg-sky-500/20 text-sky-400 border border-sky-500/30",
+    "path": "oplox",
+    "startCommand": "npm run dev",
+    "port": 5173,
+    "url": "http://localhost:5173",
+    "qaUrl": "https://ai-platform-oplox-qa.onrender.com",
+    "prodUrl": "https://ai-platform-oplox.onrender.com",
+    "cloudUrl": "https://ai-platform-oplox.onrender.com",
+    "envMode": "local",
+    "githubUrl": "https://github.com/T-Limbu/ai-platform-oplox",
+    "techStack": [
+      "Vue 3",
+      "Vite",
+      "daisyUI",
+      "Express Daemon"
+    ]
+  },
+  {
+    "id": "audio-gym",
+    "name": "Audio Gym",
+    "tagline": "Minimalist, local-first gym workout tracker with hands-free audio cue caller.",
+    "category": "Fitness",
+    "icon": "🏋️‍♂️",
+    "iconBg": "bg-indigo-500/20 text-indigo-400 border border-indigo-500/30",
+    "path": "ai-app-audio-gym",
+    "startCommand": "npm run dev",
+    "port": 5175,
+    "url": "http://localhost:5175",
+    "qaUrl": "https://ai-app-audio-gym-qa.onrender.com",
+    "prodUrl": "https://ai-app-audio-gym.onrender.com",
+    "cloudUrl": "https://audio-gym.onrender.com",
+    "envMode": "local",
+    "githubUrl": "https://github.com/T-Limbu/ai-app-audio-gym",
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Web Audio",
+      "SQLite"
+    ]
+  },
+  {
+    "id": "off-grid-audio",
+    "name": "Off-Grid Audio",
+    "tagline": "Resilient offline PWA audio player with live waveforms & Trending Top 100 auto-sync.",
+    "category": "Media",
+    "icon": "🎵",
+    "iconBg": "bg-cyan-500/20 text-cyan-400 border border-cyan-500/30",
+    "path": "ai-app-off-grid-audio",
+    "startCommand": "npm run dev",
+    "port": 8080,
+    "url": "http://localhost:8080",
+    "qaUrl": "https://ai-app-off-grid-audio-qa.onrender.com",
+    "prodUrl": "https://ai-app-off-grid-audio.onrender.com",
+    "cloudUrl": "https://off-grid-audio.onrender.com",
+    "envMode": "local",
+    "githubUrl": "https://github.com/T-Limbu/ai-app-off-grid-audio",
+    "techStack": [
+      "TypeScript",
+      "PWA",
+      "IndexedDB",
+      "Web Audio"
+    ]
+  },
+  {
+    "id": "off-grid-video",
+    "name": "Off-Grid Video",
+    "tagline": "Offline-first Netflix clone featuring TMDB discovery & cached debrid downloads.",
+    "category": "Media",
+    "icon": "🎬",
+    "iconBg": "bg-rose-500/20 text-rose-400 border border-rose-500/30",
+    "path": "ai-app-off-grid-video",
+    "startCommand": "npm run dev",
+    "port": 3000,
+    "url": "http://localhost:3000",
+    "qaUrl": "https://ai-app-off-grid-video-qa.onrender.com",
+    "prodUrl": "https://ai-app-off-grid-video.onrender.com",
+    "cloudUrl": "https://off-grid-video.onrender.com",
+    "envMode": "local",
+    "githubUrl": "https://github.com/T-Limbu/ai-app-off-grid-video",
+    "techStack": [
+      "React",
+      "Next.js",
+      "TMDB API",
+      "Local Storage"
+    ]
+  },
+  {
+    "id": "mail-triage",
+    "name": "Mail Triage AI",
+    "tagline": "Multi-provider email sweeper with 1-click mass unsubscribe & LLM semantic triage.",
+    "category": "Productivity",
+    "icon": "📬",
+    "iconBg": "bg-amber-500/20 text-amber-400 border border-amber-500/30",
+    "path": "ai-app-mail-triage",
+    "startCommand": "npm run dev",
+    "port": 3001,
+    "url": "http://localhost:3001",
+    "qaUrl": "https://ai-app-mail-triage-qa.onrender.com",
+    "prodUrl": "https://ai-app-mail-triage.onrender.com",
+    "cloudUrl": "https://mail-triage.onrender.com",
+    "envMode": "local",
+    "githubUrl": "https://github.com/T-Limbu/ai-app-mail-triage",
+    "techStack": [
+      "Next.js 14",
+      "Tailwind",
+      "Gmail API",
+      "Gemini AI"
+    ]
+  },
+  {
+    "id": "design-vault",
+    "name": "Design Vault (Mini-Mobbin)",
+    "tagline": "Local-first design reference library, Mobbin-style lightbox, and MCP knowledge bridge.",
+    "category": "Engineering",
+    "icon": "🏛️",
+    "iconBg": "bg-purple-500/20 text-purple-400 border border-purple-500/30",
+    "path": "ai-platform-design-vault",
+    "startCommand": "python -m uvicorn design_vault.main:app --host 127.0.0.1 --port 8000",
+    "port": 8000,
+    "url": "http://127.0.0.1:8000",
+    "qaUrl": "https://ai-platform-design-vault-qa.onrender.com",
+    "prodUrl": "https://ai-platform-design-vault.onrender.com",
+    "cloudUrl": "https://design-vault.onrender.com",
+    "envMode": "local",
+    "githubUrl": "https://github.com/T-Limbu/ai-platform-design-vault",
+    "techStack": [
+      "FastAPI",
+      "SQLite (WAL)",
+      "Playwright",
+      "MCP Server"
+    ]
+  },
+  {
+    "id": "poker-ocr",
+    "name": "Poker Ocr",
+    "tagline": "Autonomous squad application: Poker Ocr.",
+    "category": "Engineering",
+    "icon": "⚡",
+    "iconBg": "bg-primary/20 text-primary border border-primary/30",
+    "path": "ai-app-poker-ocr",
+    "startCommand": "python main.py",
+    "port": 3000,
+    "url": "http://localhost:3000",
+    "qaUrl": "https://ai-app-poker-ocr-qa.onrender.com",
+    "prodUrl": "https://ai-app-poker-ocr.onrender.com",
+    "cloudUrl": "https://ai-app-poker-ocr.onrender.com",
+    "envMode": "local",
+    "githubUrl": "https://github.com/T-Limbu/ai-app-poker-ocr",
+    "techStack": [
+      "Python"
+    ]
+  }
+]
