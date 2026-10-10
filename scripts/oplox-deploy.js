@@ -130,6 +130,51 @@ function detectProjectMetadata() {
   return manifest;
 }
 
+async function syncGitOpsFleet(manifest) {
+  const infraDir = path.resolve(cwd, '../ai-platform-infra');
+  const fleetFile = path.join(infraDir, 'fleet.json');
+
+  if (!fs.existsSync(fleetFile)) {
+    console.log(`ℹ️  ai-platform-infra not found at ${infraDir}, skipping GitOps commit.`);
+    return;
+  }
+
+  try {
+    let fleet = [];
+    try {
+      fleet = JSON.parse(fs.readFileSync(fleetFile, 'utf-8'));
+    } catch (e) {
+      fleet = [];
+    }
+
+    const sanitized = { ...manifest };
+    sanitized.path = path.basename(manifest.path);
+
+    const existingIdx = fleet.findIndex((a) => a.id === sanitized.id);
+    if (existingIdx !== -1) {
+      fleet[existingIdx] = { ...fleet[existingIdx], ...sanitized };
+    } else {
+      fleet.push(sanitized);
+    }
+
+    fs.writeFileSync(fleetFile, JSON.stringify(fleet, null, 2), 'utf-8');
+    console.log(`📝 Updated fleet registry in ai-platform-infra/fleet.json.`);
+
+    // Git commit & push to GitHub
+    try {
+      execSync('git add fleet.json', { cwd: infraDir, stdio: 'pipe' });
+      execSync(`git commit -m "chore(fleet): register ${manifest.id} node [skip ci]"`, { cwd: infraDir, stdio: 'pipe' });
+      execSync('git push origin main', { cwd: infraDir, stdio: 'pipe' });
+      console.log(`🌐 GitOps Persistence: Synced and pushed ${manifest.id} to GitHub origin/main.`);
+    } catch (gitErr) {
+      // If nothing changed or push failed, warn gracefully
+      console.log(`ℹ️  GitOps push status: ${gitErr.message || 'Already up to date'}.`);
+    }
+  } catch (err) {
+    console.warn(`⚠️  GitOps fleet sync warning: ${err.message}`);
+  }
+}
+
 async function registerToOplox(manifest) {
   console.log(`📦 Manifest Inferred:`);
   console.log(`   • ID:          ${manifest.id}`);
@@ -156,6 +201,9 @@ async function registerToOplox(manifest) {
     console.log(`✅ Success! ${manifest.name} is now deployed & registered into Oplox.`);
     console.log(`   Target Oplox: ${OPLOX_API}`);
     console.log(`   Node Status:  ${result.message || 'Active'}\n`);
+
+    // Sync to GitOps fleet remote
+    await syncGitOpsFleet(manifest);
   } catch (err) {
     console.error(`❌ Could not connect to Oplox daemon at ${OPLOX_API}.`);
     console.error(`   Ensure Oplox is running ('npm run dev' or 'node server/index.js') before registering.\n`);
@@ -165,3 +213,4 @@ async function registerToOplox(manifest) {
 
 const manifest = detectProjectMetadata();
 registerToOplox(manifest);
+

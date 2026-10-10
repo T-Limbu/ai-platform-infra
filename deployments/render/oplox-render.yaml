@@ -6,7 +6,7 @@ services:
     env: node
     plan: free
     region: frankfurt
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run server
     branch: main
     autoDeploy: false
@@ -15,6 +15,8 @@ services:
         value: production
       - key: APP_ENV
         value: prod
+      - key: NODE_VERSION
+        value: 20
 
   # QA / Staging Fullstack Web Service (dev branch)
   # CONTINUOUS: autoDeploy is enabled for rapid dogfooding and non-prod end-to-end QA verification.
@@ -23,7 +25,7 @@ services:
     env: node
     plan: free
     region: frankfurt
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run server
     branch: dev
     autoDeploy: true
@@ -32,3 +34,5 @@ services:
         value: production
       - key: APP_ENV
         value: qa
+      - key: NODE_VERSION
+        value: 20
