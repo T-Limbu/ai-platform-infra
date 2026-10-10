@@ -18,5 +18,28 @@
     "techStack": [
       "Python"
     ]
+  },
+  {
+    "id": "off-grid-audio",
+    "name": "Off-Grid Audio",
+    "tagline": "Resilient offline PWA media player with live waveforms & Trending Top 100 auto-sync.",
+    "category": "Media",
+    "icon": "🎵",
+    "iconBg": "bg-sky-500/20 text-sky-400 border border-sky-500/30",
+    "path": "ai-app-off-grid-audio",
+    "startCommand": "npm run dev",
+    "port": 8080,
+    "url": "http://localhost:8080",
+    "qaUrl": "https://off-grid-audio-dev.onrender.com",
+    "prodUrl": "https://off-grid-audio.onrender.com",
+    "cloudUrl": "https://off-grid-audio.onrender.com",
+    "envMode": "qa",
+    "githubUrl": "https://github.com/T-Limbu/ai-app-off-grid-audio",
+    "techStack": [
+      "TypeScript",
+      "PWA",
+      "IndexedDB",
+      "Web Audio"
+    ]
   }
 ]
