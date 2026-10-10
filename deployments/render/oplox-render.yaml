@@ -13,11 +13,13 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: APP_ENV
+        value: prod
 
-  # Development Fullstack Web Service (dev branch)
-  # CONTINUOUS: autoDeploy is enabled for rapid dogfooding and QA verification.
+  # QA / Staging Fullstack Web Service (dev branch)
+  # CONTINUOUS: autoDeploy is enabled for rapid dogfooding and non-prod end-to-end QA verification.
   - type: web
-    name: ai-platform-oplox-dev
+    name: ai-platform-oplox-qa
     env: node
     plan: free
     region: frankfurt
@@ -28,3 +30,5 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: APP_ENV
+        value: qa
