@@ -1,15 +1,30 @@
 services:
+  # Production Fullstack Web Service (main branch)
+  # LOCKED DOWN: autoDeploy is explicitly disabled to guarantee unpinned commits never ship to production.
   - type: web
-    name: ai-platform-oplox
+    name: ai-platform-oplox-prod
     env: node
     plan: free
     region: frankfurt
     buildCommand: npm install && npm run build
     startCommand: npm run server
-    autoDeploy: true
-    branch: dev
+    branch: main
+    autoDeploy: false
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 10000
+
+  # Development Fullstack Web Service (dev branch)
+  # CONTINUOUS: autoDeploy is enabled for rapid dogfooding and QA verification.
+  - type: web
+    name: ai-platform-oplox-dev
+    env: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install && npm run build
+    startCommand: npm run server
+    branch: dev
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
