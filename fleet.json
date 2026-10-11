@@ -33,13 +33,36 @@
     "prodUrl": "https://off-grid-audio.onrender.com",
     "port": 8080,
     "path": "ai-app-off-grid-audio",
-    "icon": "??",
+    "icon": "🎧",
     "envMode": "qa",
     "techStack": [
       "TypeScript",
       "PWA",
       "IndexedDB",
       "Web Audio"
+    ]
+  },
+  {
+    "id": "shuttle-feed",
+    "name": "ShuttleFeed Studio",
+    "tagline": "Court-ready Web Bluetooth app, court simulator & drill choreographer for Siboasi SS-B2202A.",
+    "category": "Sports",
+    "icon": "🏸",
+    "iconBg": "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30",
+    "path": "ai-app-shuttle-feed",
+    "startCommand": "python serve.py",
+    "port": 8000,
+    "url": "http://localhost:8000",
+    "qaUrl": "https://ai-app-shuttle-feed-qa.onrender.com",
+    "prodUrl": "https://ai-app-shuttle-feed.onrender.com",
+    "cloudUrl": "https://ai-app-shuttle-feed-qa.onrender.com",
+    "envMode": "qa",
+    "githubUrl": "https://github.com/T-Limbu/ai-app-shuttle-feed",
+    "techStack": [
+      "Vue 3",
+      "Quasar",
+      "Web Bluetooth",
+      "PWA"
     ]
   }
 ]
